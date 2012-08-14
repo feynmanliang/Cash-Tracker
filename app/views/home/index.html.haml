@@ -1,0 +1,9 @@
+%h1 home#index
+- if current_user
+  Welcome #{current_user.name}!
+  = link_to "Sign Out", signout_path
+- else
+  = link_to "Log in with Facebook", "/auth/facebook"
+- flash.each do |name, msg|
+  = content_tag :div, :msg, :id => "flash_#{name}"
+
