@@ -1,4 +1,6 @@
 CashTracker::Application.routes.draw do
+  resources :transactions
+
   get "sessions/create"
 
   root :to => 'Home#index'
