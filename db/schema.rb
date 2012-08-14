@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120814113530) do
+ActiveRecord::Schema.define(:version => 20120814193147) do
 
   create_table "transactions", :force => true do |t|
     t.decimal  "amount",     :precision => 10, :scale => 2
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(:version => 20120814113530) do
     t.decimal  "long",       :precision => 10, :scale => 6
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+    t.integer  "user_id"
   end
+
+  add_index "transactions", ["user_id", "created_at"], :name => "index_transactions_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "provider"

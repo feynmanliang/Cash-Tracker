@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  amount: 
-  lat: 
-  long: 9.99
+  amount: 12.34
+  lat: 12.34567
+  long: 89.101112
 
 two:
-  amount: 
-  lat: 
-  long: 9.99
+  amount: 56.78
+  lat: 98.765432
+  long: 13.32110
