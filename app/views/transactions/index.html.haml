@@ -1,24 +1,25 @@
-%h1 Listing transactions for #{current_user.name}
+.container-fluid
+  %h1 Listing transactions for #{current_user.name}
 
-%table
-  %tr
-    %th Date
-    %th Amount
-    %th Lat
-    %th Long
-    %th
-    %th
-    %th
-
-  - @transactions.each do |transaction|
+  %table
     %tr
-      %td= transaction.created_at
-      %td= transaction.amount
-      %td= transaction.lat
-      %td= transaction.long
-      %td= link_to 'Show', transaction
-      %td= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete
+      %th Date
+      %th Amount
+      %th Lat
+      %th Long
+      %th
+      %th
+      %th
 
-%br
+    - @transactions.each do |transaction|
+      %tr
+        %td= transaction.created_at
+        %td= transaction.amount
+        %td= transaction.lat
+        %td= transaction.long
+        %td= link_to 'Show', transaction
+        %td= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete
 
-= link_to 'New Transaction', new_transaction_path
+  %br
+
+  = link_to 'New Transaction', new_transaction_path
