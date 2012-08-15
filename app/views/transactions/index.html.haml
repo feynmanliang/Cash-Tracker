@@ -1,4 +1,7 @@
-%h1 Listing your transactions
+Welcome #{current_user.name}!
+= link_to "Sign Out", signout_path
+
+%h1 Listing transactions for #{current_user.name}
 
 %table
   %tr
