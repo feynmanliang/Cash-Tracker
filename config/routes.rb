@@ -1,11 +1,12 @@
 CashTracker::Application.routes.draw do
-  resources :transactions
-
-  get "sessions/create"
-
   root :to => 'Home#index'
 
+  resources :transactions
+  resources :users
+
   match "/auth/:provider/callback" => "sessions#create"
+  get "sessions/create"
+
   match "/signout" => "sessions#destroy", :as => :signout
   # The priority is based upon order of creation:
   # first created -> highest priority.
