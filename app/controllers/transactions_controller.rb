@@ -32,15 +32,11 @@ class TransactionsController < ApplicationController
     end
   end
 
-  # GET /transactions/1/edit
-  def edit
-    @transaction = Transaction.find(params[:id])
-  end
-
   # POST /transactions
   # POST /transactions.json
   def create
     @transaction = Transaction.new(params[:transaction])
+    @transaction.user_id = session[:user_id]
 
     respond_to do |format|
       if @transaction.save

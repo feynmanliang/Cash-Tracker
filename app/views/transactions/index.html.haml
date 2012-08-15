@@ -1,7 +1,8 @@
-%h1 Listing transactions
+%h1 Listing your transactions
 
 %table
   %tr
+    %th Date
     %th Amount
     %th Lat
     %th Long
@@ -11,11 +12,11 @@
 
   - @transactions.each do |transaction|
     %tr
+      %td= transaction.created_at
       %td= transaction.amount
       %td= transaction.lat
       %td= transaction.long
       %td= link_to 'Show', transaction
-      %td= link_to 'Edit', edit_transaction_path(transaction)
       %td= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete
 
 %br
