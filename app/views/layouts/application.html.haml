@@ -7,14 +7,17 @@
     = csrf_meta_tags
     == <meta name="viewport" content="width=device-width", initial-scale=1.0" />
 %body
-  %header.navbar.navbar-fixed-top
+  .navbar.navbar-fixed-top
     .navbar-inner
       .container
-        = link_to "Home", root_path, id:"logo"
-        %nav
-          %ul.nav.pull-right
-            = link_to "About Us", "#"
-            = sign_in_out_link
-  .container-fluid
-    .container-fluid
-      = yield
+        %button.btn.btn-navbar{type: "button", data: {toggle: "collapse", target: ".nav-collapse"} }
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to "CashTracker", root_path, class:"brand"
+        .nav-collapse.collapse
+          %ul.nav
+            %li= link_to "About Us", "#"
+            %li= sign_in_out_link
+  .container
+    = yield
