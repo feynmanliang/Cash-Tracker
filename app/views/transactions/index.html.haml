@@ -4,6 +4,9 @@
     %p.center Here are your recent transactions...
 
 .transactions
+  = gmaps("markers" => {"data" => @markers, 
+    "options" => {"rich_marker" => true } })
+
   %table
     %tr
       %th Date

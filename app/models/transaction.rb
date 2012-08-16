@@ -11,7 +11,7 @@ class Transaction < ActiveRecord::Base
   default_scope order: 'transactions.created_at DESC'
 
   def geocode?
-    (!address.blank? && (lat.blank? || lng.blank?)) || address_changed?
+    (lat.blank? || long.blank?)
   end
 
 end
