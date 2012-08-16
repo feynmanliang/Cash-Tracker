@@ -22,4 +22,3 @@ $(document).ready(function() {
     // Error, location not possible
   }
 });
-

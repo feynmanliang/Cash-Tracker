@@ -14,6 +14,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/1.json
   def show
     @transaction = Transaction.find(params[:id])
+    @json = @transaction.to_gmaps4rails
 
     respond_to do |format|
       format.html # show.html.erb

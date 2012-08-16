@@ -1,4 +1,7 @@
 class Transaction < ActiveRecord::Base
+  acts_as_gmappable :lat => 'lat', :lng => 'long', :process_geocoding => :geocode?,
+    :msg => "Sorry, not even Google could figure out where that is"
+
   attr_accessible :amount, :lat, :long
   belongs_to :user
 
@@ -6,4 +9,9 @@ class Transaction < ActiveRecord::Base
   validates :amount, presence: true
 
   default_scope order: 'transactions.created_at DESC'
+
+  def geocode?
+    (!address.blank? && (lat.blank? || lng.blank?)) || address_changed?
+  end
+
 end

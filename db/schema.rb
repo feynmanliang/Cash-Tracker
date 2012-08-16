@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120814193147) do
+ActiveRecord::Schema.define(:version => 20120816075050) do
 
   create_table "transactions", :force => true do |t|
     t.decimal  "amount",     :precision => 10, :scale => 2
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120814193147) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.integer  "user_id"
+    t.boolean  "gmaps"
   end
 
   add_index "transactions", ["user_id", "created_at"], :name => "index_transactions_on_user_id_and_created_at"
