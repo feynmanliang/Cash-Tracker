@@ -6,4 +6,8 @@ module ApplicationHelper
       link_to "Log Out", signout_path
     end
   end
+
+  def real_currency(number)
+    number_to_currency(number,:delimiter => ".", :unit => "$ ",:separator => ".")
+  end
 end

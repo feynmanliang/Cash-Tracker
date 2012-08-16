@@ -8,18 +8,15 @@
     %tr
       %th Date
       %th Amount
-      %th Lat
-      %th Long
       %th
       %th
       %th
 
     - @transactions.each do |transaction|
       %tr
-        %td= transaction.created_at
-        %td= transaction.amount
-        %td= transaction.lat
-        %td= transaction.long
+        %td= transaction.created_at.join "\t"
+        %td= real_currency transaction.amount
+        %td
         %td= link_to 'Show', transaction
         %td= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete
 
