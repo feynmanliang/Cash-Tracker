@@ -18,4 +18,4 @@
 //
 // Load HighCharts
 //= require highcharts
-//= require highcharts/themes/gray
+//= require highcharts/themes/grid

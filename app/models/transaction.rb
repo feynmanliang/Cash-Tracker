@@ -14,4 +14,7 @@ class Transaction < ActiveRecord::Base
     (lat.blank? || long.blank?)
   end
 
+  def self.total_on(date)
+    where("date(created_at) = ?", date).sum(:amount)
+  end
 end

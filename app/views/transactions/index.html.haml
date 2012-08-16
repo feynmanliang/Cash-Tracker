@@ -1,12 +1,16 @@
 %header
   .inner
     %h1 Hi #{current_user.name}!
-    %p.center Here are your recent transactions...
+    %p.center= link_to 'New Transaction', new_transaction_path, class: "btn btn-primary"
 
-#transactions_chart
+%br
+.span6
+  #transactions_chart
 
-.transactions
+.span5
   = gmaps4rails(@markers)
+
+.transactions.span8
 
   %table
     %tr
@@ -26,4 +30,3 @@
 
   %br
 
-= link_to 'New Transaction', new_transaction_path, class: "btn"
