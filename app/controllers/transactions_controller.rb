@@ -86,4 +86,12 @@ class TransactionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+ def doThingWithGeoLocationVisitor
+   @message = "test AJAX successful"
+   respond_to do |format|
+     format.json
+   end
+ end
+
 end

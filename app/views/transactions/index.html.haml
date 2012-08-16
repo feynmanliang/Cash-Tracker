@@ -14,7 +14,7 @@
 
     - @transactions.each do |transaction|
       %tr
-        %td= transaction.created_at.join "\t"
+        %td= transaction.created_at
         %td= real_currency transaction.amount
         %td
         %td= link_to 'Show', transaction

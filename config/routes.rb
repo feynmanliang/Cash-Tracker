@@ -1,6 +1,7 @@
 CashTracker::Application.routes.draw do
   root :to => 'Home#index'
 
+  get "transactions/doThingWithGeoLocationVisitor"
   resources :transactions
   resources :users
 
