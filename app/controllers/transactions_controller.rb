@@ -37,19 +37,9 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(params[:transaction])
     @transaction.user_id = session[:user_id]
-    @transaction.lat = 0.00
-    @transaction.long = 0.00
-
-    if @lat_lng
-      @lat_lng = cookies[:lat_lng].split("|")
-      @transaction.lat = @lat_lng[0]
-      @transaction.long = @lat_lng[1]
-    end
 
     respond_to do |format|
       if @transaction.save
-        @lat_lng = nil
-        cookies[:lat_lng] = nil
         format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
         format.json { render json: @transaction, status: :created, location: @transaction }
       else
