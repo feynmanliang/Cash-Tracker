@@ -29,10 +29,8 @@ gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
-# HAML
+# Styling
 gem 'haml-rails'
-
-# Twitter bootstrap
 gem 'bootstrap-sass'
 
 # Map Drawing
