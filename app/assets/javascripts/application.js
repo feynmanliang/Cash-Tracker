@@ -16,3 +16,6 @@
 // Loads all Bootstrap javascripts
 //= require bootstrap
 //
+// Load HighCharts
+//= require highcharts
+//= require highcharts/themes/gray

@@ -3,20 +3,35 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 # Get GeoLocation
-$(document).ready ->
-  location() ->
-    if navigator.geolocation
+$ ->
+  location = ->
+    if (navigator.geolocation)
       navigator.geolocation.getCurrentPosition(successFunction, errorFunction)
     else
       # Error, geolocation not possible
 
-  successFunction(position) ->
+  successFunction = (position) ->
     lat = position.coords.latitude
     lot = position.coords.longitude
     $('input#transaction_lat').val(lat)
     $('input#transaction_long').val(lot)
 
-  errorFunction(position) ->
-      # Error, location not possible
+  errorFunction = (position) ->
+    # Error, location not possible
+  location()
 
-
+# HighCharts
+$ ->
+  new Highcharts.Chart
+    chart:
+      renderTo: "transactions_chart"
+    title:
+      text: "Orders by Day"
+    xAxis:
+      type: "datetime"
+    yAxis:
+      title:
+        text: "Dollars"
+    series: [
+      data: [1,2,5,7,3]
+    ]

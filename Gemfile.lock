@@ -53,6 +53,8 @@ GEM
       haml (~> 3.0)
       railties (~> 3.0)
     hashie (1.2.0)
+    highcharts-rails (2.2.4)
+      railties (~> 3.1)
     hike (1.2.1)
     httpauth (0.1)
     i18n (0.6.0)
@@ -142,6 +144,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   gmaps4rails
   haml-rails
+  highcharts-rails
   jquery-rails
   omniauth
   omniauth-facebook
